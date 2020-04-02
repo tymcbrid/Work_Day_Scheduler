@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+  <body class="background">
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <div class="sub-header">
+        <button><p id="currentDay" class="lead"></p></button> 
+      </div>
+      <div><p class="weather" style="position: absolute; right: 35px; top: 12px; font-size: 15px"></p><i class="fas fa-cloud-sun" style="position: absolute; right: 10px; top: 10px;"></i></div>
+    </header>
+    <!--  -->
+    <div class="wrapper">
+      <main>
+        <div class="toolbar">
+          <div class="toggle">
+            <!-- <div class="toggle__option">week</div>
+            <div class="toggle__option toggle__option--selected">month</div> -->
+          </div>
+          <div class="current-month"><!-- switch to moment--></div>
+          <div class="search-input">
+            <!-- <input type="text" value="What are you looking for?"> -->
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <div class="calendar">
+          <div class="calendar__header">
+            <div>mon</div>
+            <div>tue</div>
+            <div>wed</div>
+            <div>thu</div>
+            <div>fri</div>
+            <div>sat</div>
+            <div>sun</div>
+          </div>
+          <div class="calendar__week">
+            <div class="calendar__day day">1</div>
+            <div class="calendar__day day">2</div>
+            <div class="calendar__day day">3</div>
+            <div class="calendar__day day">4</div>
+            <div class="calendar__day day">5</div>
+            <div class="calendar__day day">6</div>
+            <div class="calendar__day day">7</div>
+          </div>
+          <div class="calendar__week">
+            <div class="calendar__day day">8</div>
+            <div class="calendar__day day">9</div>
+            <div class="calendar__day day">10</div>
+            <div class="calendar__day day">11</div>
+            <div class="calendar__day day">12</div>
+            <div class="calendar__day day">13</div>
+            <div class="calendar__day day">14</div>        
+          </div>
+          <div class="calendar__week">
+            <div class="calendar__day day">15</div>
+            <div class="calendar__day day">16</div>
+            <div class="calendar__day day">17</div>
+            <div class="calendar__day day">18</div>
+            <div class="calendar__day day">19</div>
+            <div class="calendar__day day">20</div>
+            <div class="calendar__day day">21</div>    
+          </div>
+          <div class="calendar__week">
+            <div class="calendar__day day">22</div>
+            <div class="calendar__day day">23</div>
+            <div class="calendar__day day">24</div>
+            <div class="calendar__day day">25</div>
+            <div class="calendar__day day">26</div> 
+            <div class="calendar__day day">27</div> 
+            <div class="calendar__day day">28</div> 
+          </div>
+          <div class="calendar__week">
+            <div class="calendar__day day">29</div>
+            <div class="calendar__day day">30</div>
+            <div class="calendar__day day">31</div>
+            <div class="calendar__day day">1</div>
+            <div class="calendar__day day">2</div>
+            <div class="calendar__day day">3</div>
+            <div class="calendar__day day">4</div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!--  -->
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Hour</th>
+            <th scope="col">Task</th>
+            <th scope="col col-lock">Lock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour9">9AM</th>
+            <td class="task" id="input9AM"><input placeholder="Task" id="9"></input></td>
+            <td class="lock" id="lock9"><button class="button" id="button9"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour10">10AM</th>
+            <td class="task" id="input10AM"><input placeholder="Task" id="10"></input></td>
+            <td class="lock" id="lock10"><button class="button" id="button10"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour11">11AM</th>
+            <td class="task" id="input11AM"><input placeholder="Task" id="11"></input></td>
+            <td class="lock" id="lock11"><button class="button" id="button11"><i class="fas fa-calendar-check fa-4x" id="img9"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row" class="hour" id="hour12">12PM</th>
+            <td class="task" id="input12PM"><input placeholder="Task" id="12"></input></td>
+            <td class="lock" id="lock12"><button class="button" id="button12"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour13">1PM</th>
+            <td class="task" id="input1PM"><input placeholder="Task" id="13"></input></td>
+            <td class="lock" id="lock13"><button class="button" id="button13"><i class="fas fa-calendar-check fa-4x" id="13"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour14">2PM</th>
+            <td class="task" id="input2PM"><input placeholder="Task" id="14"></input></td>
+            <td class="lock" id="lock14"><button class="button" id="button14"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour15">3PM</th>
+            <td class="task" id="input3PM"><input placeholder="Task" id="15"></input></td>
+            <td class="lock" id="lock15"><button class="button" id="button15"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour16">4PM</th>
+            <td class="task" id="input4PM"><input placeholder="Task" id="16"></input></td>
+            <td class="lock" id="lock16"><button class="button" id="button16"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+          <tr class="content">
+            <th scope="row" class="hour" id="hour17">5PM</th>
+            <td class="task" id="input5PM"><input placeholder="Task" id="17"></input></td>
+            <td class="lock" id="lock17"><button class= "button" id="button17"><i class="fas fa-calendar-check fa-4x"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <script src="moment.js"></script>
+    <script src="moment-with-locals.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
